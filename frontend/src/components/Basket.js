@@ -2,8 +2,10 @@ import React from "react";
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
+
+  //setting the (accumulator, currentValue) => function, initial value of accumulator
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  // const shippingPrice = itemsPrice > 2000 ? 0 : 20;
+
   let totalPrice = itemsPrice;
   let subTotal = itemsPrice;
   let discount = 0;

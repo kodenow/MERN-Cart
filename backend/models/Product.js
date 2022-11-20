@@ -14,7 +14,7 @@ const connection = mongoose.createConnection(
 const Schema = mongoose.Schema;
 const productSchema = new Schema(
   {
-    sku: {
+    uuid: {
       type: Number,
       required: true,
     },
@@ -33,7 +33,7 @@ const productSchema = new Schema(
 const Product = mongoose.model("Product", productSchema);
 
 const getProduct = async (sku) => {
-  return await Product.findOne({ sku: sku });
+  return await Product.findOne({ uuid: sku });
 };
 //this will also automatically creates a collection for us
 module.exports = {

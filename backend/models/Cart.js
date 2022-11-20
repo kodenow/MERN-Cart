@@ -9,9 +9,21 @@ const cartSchema = new Schema(
     },
     items: {
       type: Array,
+      required: true,
     },
-    total_amount: {
+    discount_percentage: {
       type: Number,
+    },
+    discount: {
+      type: Number,
+    },
+    sub_total: {
+      type: Number,
+      required: true,
+    },
+    total_price: {
+      type: Number,
+      required: true,
     },
   },
   { timestamps: true }
@@ -45,5 +57,3 @@ module.exports = {
   getCart,
   createOrUpdate,
 };
-
-// module.exports = { mongoose.model("Cart", cartSchema), getCart};
