@@ -6,7 +6,7 @@ const getCart = async (req, res) => {
 
   const cart = await CartModel.getCart(cartId);
   if (!cart) {
-    return res.status(400).json({ error: "No such workout ID" });
+    return res.status(400).json({ error: "Cart is empty" });
   }
   res.status(200).json(cart);
 };
